@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="weather.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+</head>
+<body>
+    <div id="root">   
+        <div id="sec-location" class="container">
+                    <div id="search">
+                        <input type="text" value="搜索地区/景点" id="city-name">    
+                    </div>
+                    <p>历史记录</p>
+                    <div id="history"></div>
+                    <p>热门城市</p>
+                    <div id="hot-city">
+                        
+                        <div class="hot-city-item" onclick="hot('北京')">北京</div>
+                        <div class="hot-city-item" onclick="hot('上海')">上海</div>
+                        <div class="hot-city-item" onclick="hot('广州')">广州</div>
+                        <div class="hot-city-item" onclick="hot('深圳')">深圳</div>
+                        <div class="hot-city-item" onclick="hot('郑州')">郑州</div>
+                        <div class="hot-city-item" onclick="hot('西安')">西安</div>
+                        <div class="hot-city-item" onclick="hot('南京')">南京</div>
+                        <div class="hot-city-item" onclick="hot('杭州')">杭州</div>
+                        <div class="hot-city-item" onclick="hot('武汉')">武汉</div>
+                        <div class="hot-city-item" onclick="hot('成都')">成都</div>
+                        <div class="hot-city-item" onclick="hot('沈阳')">沈阳</div>
+                        <div class="hot-city-item" onclick="hot('天津')">天津</div>
+                    </div>
+                    <p>热门景点</p>
+                    <div id="hot-spot">
+                        
+                        <div class="hot-spot-item" onclick="hot('故宫')">故宫</div>
+                        <div class="hot-spot-item" onclick="hot('颐和园')">颐和园</div>
+                        <div class="hot-spot-item" onclick="hot('九寨沟')">九寨沟</div>
+                        <div class="hot-spot-item" onclick="hot('凤凰古城')">凤凰古城</div>
+                        <div class="hot-spot-item" onclick="hot('秦始皇陵')">秦始皇陵</div>
+                        <div class="hot-spot-item" onclick="hot('龙门石窟')">龙门石窟</div>
+                        <div class="hot-spot-item" onclick="hot('武陵源')">武陵源</div>
+                        <div class="hot-spot-item" onclick="hot('华山')">华山</div>
+                        <div class="hot-spot-item" onclick="hot('黄山')">黄山</div>
+                    </div>
+            </div>     
+        <section id="sec-main" class="container">
+            <p id="location" onclick="pull('sec-location')">
+                北京
+                
+            </p>
+            
+            <p id="weather"></p>
+            <div id="wind-humidity">
+                <p class="txt" id="wind-humi-top"></p>
+                <p class="show txt" id="wind-humi-bot"></p>
+            </div>
+            <p id="tips"></p>
+        </section>
+        <section id="sec-tomorrow" class="container">
+            <div class="tomo-item">
+                <div class="tomo-item-top">
+                    <span class="tomo-item-top-left"></span>
+                    <span class="tomo-item-top-right"></span>
+                </div>
+                <div id="tomo-item-bottom">
+                    <span class="tomo-item-bot-left"></span>
+                    <img src="" class="tomo-item-bot-right">
+                </div>
+            </div>
+            <div class="tomo-item">
+                <div class="tomo-item-top">
+                    <span class="tomo-item-top-left"></span>
+                    <span class="tomo-item-top-right"></span>
+                </div>
+                <div id="tomo-item-bottom">
+                    <span class="tomo-item-bot-left"></span>
+                    <img src="" class="tomo-item-bot-right">
+                </div>
+            </div>
+            
+        </section>
+        <section id="sec-hours" class="container">
+            <div>
+                <ol class="hours-weather" id="hours">
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+                    <li class="hours-weather-item">
+                        <p class="we-item-top"></p>
+                        <img class="hours-img" src="">
+                        <p class="we-item-bot"></p>
+                    </li>
+
+                </ol>
+            </div>
+        </section>
+        
+        <section id="sec-days" class="container">
+            <canvas id="myChart" width="133" height="50"></canvas>
+        </section>
+        <section id="sec-living" class="container">
+            <div>
+                <ul class="living">
+                    <li class="living-item">
+                        <img class="living-item-we" src="">
+                        <p class="living-item-top"></p>
+                        <p class="living-item-bot"></p>
+                    </li>
+                    <li class="living-item">
+                        <img class="living-item-we" src="">
+                        <p class="living-item-top"></p>
+                        <p class="living-item-bot"></p>
+                    </li>
+                    <li class="living-item">
+                        <img class="living-item-we" src="">
+                        <p class="living-item-top"></p>
+                        <p class="living-item-bot"></p>
+                    </li>
+                    <li class="living-item">
+                        <img class="living-item-we" src="">
+                        <p class="living-item-top"></p>
+                        <p class="living-item-bot"></p>
+                    </li>
+                    <li class="living-item">
+                        <img class="living-item-we" src="">
+                        <p class="living-item-top"></p>
+                        <p class="living-item-bot"></p>
+                    </li>
+                    <li class="living-item">
+                        <img class="living-item-we" src="">
+                        <p class="living-item-top"></p>
+                        <p class="living-item-bot"></p>
+                    </li>
+                    <li class="living-item">
+                        <img class="living-item-we" src="">
+                        <p class="living-item-top"></p>
+                        <p class="living-item-bot"></p>
+                    </li>
+                    <li class="living-item">
+                        <img class="living-item-we" src="">
+                        <p class="living-item-top"></p>
+                        <p class="living-item-bot"></p>
+                    </li>
+                </ul>
+                
+            </div>
+        </section>
+        <section id="sec-footer" class="container">
+            <div id="footer-top">
+                <span id="footer-top-left">数据来源于中国天气网</span>
+                <span>反馈|举报</span>
+
+            </div>
+            <div id="footer-bot">
+                Copyright&copy;1998-2020 Tecent.All Right Reserved
+            </div>
+        </section>
+
+       
+
+    </div>
+
+    <script src="weather.js"></script>
+</body>
+</html>

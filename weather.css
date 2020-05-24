@@ -1,0 +1,147 @@
+.container{
+    display: block;
+    max-width: 500px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+#root{
+    z-index: 0;
+
+}
+#city-name{
+    border-radius: 10px;
+    font-size: 20px;
+}
+/* sec-main */
+#sec-main{
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    background-image: url(weather-background/qing.jpg);
+    height: 100vh;
+    
+}
+    /* 热门城市 */
+#sec-location{
+    position: absolute;
+    max-width: 500px;
+    left: 30vw;
+    top: 1%;
+    background-color: white;
+}
+#hot-city{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+    /* 热门景点 */
+#hot-spot{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.hot-city-item{
+    width: 12vw;
+    height: 12vh;
+    font-size: 20px;
+    background-color: rgba(233, 233, 233, 0.829);
+    border-radius: 28px;
+}
+.hot-spot-item{
+    width: 12vw;
+    height: 12vh;
+    font-size: 20px;
+    background-color: rgba(233, 233, 233, 0.829);
+    border-radius: 28px;
+}
+    /* 历史记录 */
+#history{
+    display: flex;
+    flex-wrap: wrap;
+}
+#weather{
+        text-align: center;
+    font-size: 62px;
+    color: white;
+    line-height: 62px;
+    height: 62px;
+    margin-top: 66px;
+}
+#sec-location{
+    z-index: 9999;
+    display: none;
+
+}
+
+
+.txt {
+    height: 14px;
+    line-height: 14px;
+    font-size: 14px;
+    color:white;
+
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+/* sec-tomorrow */
+#sec-tomorrow{
+    display: flex;
+
+}
+
+.tomo-item-top-right{
+    float: right;
+}
+.tomo-item-bot-right{
+    width: 10%;
+    float: right;
+}
+.tomo-item{
+    padding: 6%;
+}
+.tomo-item:hover{
+    background-color: rgba(240, 240, 240, 0.534);
+}
+.tomo-item-top-left{
+    margin-bottom: 10px;
+}
+/* sec-living */
+#sec-living ul{
+    list-style: none;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+#sec-living li{
+    width: 25%;
+}
+.living-item-we{
+    width: 40%;
+}
+.living-item-top{
+    font-size: 12px;
+}
+.living-item-bot{
+    font-size: 12px;
+}
+/* 实时 */
+.hours-weather{
+    list-style: none;
+    display: flex;
+    overflow: hidden;
+    
+}
+.hours-img{
+    width: 50%;
+}
+
+/* footer */
+#sec-footer{
+    color: gray;
+    font-size: 12px;
+    text-align: center;
+}
